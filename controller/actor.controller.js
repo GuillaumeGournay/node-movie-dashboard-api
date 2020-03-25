@@ -5,7 +5,6 @@ const Movie = require('../models/').Movie;
 
 /**
  * @api {get} /actors Show all actors
- * @apiPermission The user has to be logged in to access this route
  * @apiName getActors
  * @apiGroup Actor
  * @apiSuccess {Number} _id id of the Actor.
@@ -47,12 +46,6 @@ const Movie = require('../models/').Movie;
  *          ]
  *     }]
  * 
- * @apiError {String} message Access denied
- * @apiErrorExample {json} Error-Response:
- *      HTTP/1.1 401 Unauthorized
- *      {
- *          "message": "You must be logged in to access this page"
- *      }
  */
 exports.actor_list = (req,res,next)=>{
     Actor.findAll({
